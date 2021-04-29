@@ -1,4 +1,4 @@
-FROM nephatrine/nginx-ssl:latest
+FROM nephatrine/nginx-ssl:testing
 LABEL maintainer="Daniel Wolf <nephatrine@gmail.com>"
 
 RUN echo "====== INSTALL PACKAGES ======" \
@@ -14,8 +14,6 @@ RUN echo "====== INSTALL PACKAGES ======" \
    tidyhtml-libs \
    yaml \
  && rm -rf /var/cache/apk/*
-
-ARG PHP_VERSION=PHP-8.0
 
 RUN echo "====== COMPILE PHP ======" \
  && apk add --virtual .build-php \
@@ -34,7 +32,7 @@ RUN echo "====== COMPILE PHP ======" \
    tidyhtml-dev \
    yaml-dev \
    zlib-dev \
- && git -C /usr/src clone -b "$PHP_VERSION" --single-branch --depth=1 https://github.com/php/php-src.git && cd /usr/src/php-src \
+ && git -C /usr/src clone --depth=1 https://github.com/php/php-src.git && cd /usr/src/php-src \
  && ./buildconf --force \
  && ./configure \
   --prefix=/usr \
