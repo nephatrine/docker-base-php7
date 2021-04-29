@@ -2,7 +2,7 @@
 [Docker](https://hub.docker.com/r/nephatrine/nginx-php/) |
 [unRAID](https://code.nephatrine.net/nephatrine/unraid-containers)
 
-[![Build Status](https://ci.nephatrine.net/api/badges/nephatrine/docker-nginx-php/status.svg?ref=refs/heads/master)](https://ci.nephatrine.net/nephatrine/docker-nginx-php)
+[![Build Status](https://ci.nephatrine.net/api/badges/nephatrine/docker-nginx-php/status.svg?ref=refs/heads/7.x)](https://ci.nephatrine.net/nephatrine/docker-nginx-php)
 
 # PHP Web Server
 
@@ -28,6 +28,7 @@ applications.
 
 ## Docker Tags
 
+- **nephatrine/nginx-php:8**: PHP 8.x
 - **nephatrine/nginx-php:7**: PHP 7.x
 
 ## Configuration Variables

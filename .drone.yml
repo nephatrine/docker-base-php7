@@ -15,16 +15,6 @@ steps:
   - docker tag pdr.nephatrine.net/nephatrine/nginx-php:7 nephatrine/nginx-php:7
   - HOME=/mnt/config/home docker push nephatrine/nginx-php:7
   - docker rmi pdr.nephatrine.net/nephatrine/nginx-php:7
-- name: build-latest
-  commands:
-  - docker tag nephatrine/nginx-php:7 pdr.nephatrine.net/nephatrine/nginx-php:latest
-  - docker build --pull -t pdr.nephatrine.net/nephatrine/nginx-php:latest .
-  - HOME=/mnt/config/home docker push pdr.nephatrine.net/nephatrine/nginx-php:latest
-  - docker tag pdr.nephatrine.net/nephatrine/nginx-php:latest nephatrine/nginx-php:latest
-  - HOME=/mnt/config/home docker push nephatrine/nginx-php:latest
-  - docker rmi pdr.nephatrine.net/nephatrine/nginx-php:latest
-  depends_on:
-  - build-7
 
 ---
 kind: pipeline
@@ -52,6 +42,6 @@ trigger:
 
 ---
 kind: signature
-hmac: bbd4c8086c8f7e562fa595538fe5f3b90d7de86d833c22c12fdac21762197f7d
+hmac: ddc2f5996456340747cb2d7c61027c30372de8764d989470adbb018e62b0491e
 
 ...
