@@ -41,7 +41,25 @@ trigger:
   - failure
 
 ---
+kind: pipeline
+name: propogate
+
+steps:
+- name: trigger
+  image: plugins/downstream
+  settings:
+    server: https://ci.nephatrine.net
+    token:
+      from_secret: drone-auth
+    fork: false
+    repositories:
+      - nephatrine/docker-nginx-h5ai@testing
+
+depends_on:
+- default
+
+---
 kind: signature
-hmac: 6e3dac2d70dc96b3aa119eabba8e9c19b9fbace8b548d0b16e3be93ea6445601
+hmac: 43b2fb528474065e0bb74a75f0f1d6a68c8909fde910b7f1bb44dbeac2dfe057
 
 ...
