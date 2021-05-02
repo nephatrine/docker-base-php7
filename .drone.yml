@@ -10,7 +10,7 @@ platform:
 steps:
 - name: build-testing
   commands:
-  - docker build --pull -t pdr.nephatrine.net/nephatrine/nginx-php:testing .
+  - docker build -t pdr.nephatrine.net/nephatrine/nginx-php:testing .
   - HOME=/mnt/config/home docker push pdr.nephatrine.net/nephatrine/nginx-php:testing
   - docker tag pdr.nephatrine.net/nephatrine/nginx-php:testing nephatrine/nginx-php:testing
   - HOME=/mnt/config/home docker push nephatrine/nginx-php:testing
@@ -60,6 +60,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 43b2fb528474065e0bb74a75f0f1d6a68c8909fde910b7f1bb44dbeac2dfe057
+hmac: 56f09a2b376abc5d4c18e83d5f5315d269ac25f776267ac88eaadb50a427852d
 
 ...
