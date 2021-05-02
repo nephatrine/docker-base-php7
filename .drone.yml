@@ -10,7 +10,7 @@ platform:
 steps:
 - name: build-7
   commands:
-  - docker build --pull -t pdr.nephatrine.net/nephatrine/nginx-php:7 .
+  - docker build -t pdr.nephatrine.net/nephatrine/nginx-php:7 .
   - HOME=/mnt/config/home docker push pdr.nephatrine.net/nephatrine/nginx-php:7
   - docker tag pdr.nephatrine.net/nephatrine/nginx-php:7 nephatrine/nginx-php:7
   - HOME=/mnt/config/home docker push nephatrine/nginx-php:7
@@ -42,6 +42,6 @@ trigger:
 
 ---
 kind: signature
-hmac: ddc2f5996456340747cb2d7c61027c30372de8764d989470adbb018e62b0491e
+hmac: 087a266631208a128bed30459cbbef44f7542cbe4260a65f02961a2ab9319721
 
 ...
